@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :room_statuses
+  resources :reservations
   resource :dashboard, only: [ :show ]
   resources :estates
   resources :rooms

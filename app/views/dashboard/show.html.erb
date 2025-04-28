@@ -1,2 +1,15 @@
 <h1>Dashboard#show</h1>
 <p>Find me in app/views/dashboard/show.html.erb</p>
+<p><b>Building Count:</b><%= @building_count %></p>
+
+<% @buildings.each do |building| %>
+  <h2><%= building.name %></h2>
+  <p><%= building.number %></p>
+<% end %>
+
+<% @reservations.each do |reservation| %>
+  <h2><%= reservation.start_time %></h2>
+  <p><%= reservation.end_time %></p>
+  <p><%= reservation.status %></p>
+<% end %>
+

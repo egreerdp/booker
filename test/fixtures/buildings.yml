@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: McNally
   number: 1
-  capacity: 1
-  floors: 1
+  capacity: 123
+  floors: 2
 
 two:
-  name: MyString
-  number: 1
-  capacity: 1
+  name: Thompson
+  number: 2
+  capacity: 22
   floors: 1

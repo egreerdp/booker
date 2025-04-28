@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_28_220630) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_28_230018) do
   create_table "buildings", force: :cascade do |t|
     t.string "name"
     t.integer "number"
@@ -24,6 +24,26 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_28_220630) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.integer "room_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string "purpose"
+    t.text "notes"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_reservations_on_room_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
+
+  create_table "room_statuses", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
   end
 
   create_table "rooms", force: :cascade do |t|
@@ -51,5 +71,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_28_220630) do
     t.index ["email_address"], name: "index_users_on_email_address", unique: true
   end
 
+  add_foreign_key "reservations", "rooms"
+  add_foreign_key "reservations", "users"
   add_foreign_key "sessions", "users"
 end

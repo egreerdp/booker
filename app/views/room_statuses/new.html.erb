@@ -1,0 +1,11 @@
+<% content_for :title, "New room status" %>
+
+<h1>New room status</h1>
+
+<%= render "form", room_status: @room_status %>
+
+<br>
+
+<div>
+  <%= link_to "Back to room statuses", room_statuses_path %>
+</div>
