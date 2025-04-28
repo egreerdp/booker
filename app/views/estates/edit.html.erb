@@ -1,0 +1,12 @@
+<% content_for :title, "Editing estate" %>
+
+<h1>Editing estate</h1>
+
+<%= render "form", estate: @estate %>
+
+<br>
+
+<div>
+  <%= link_to "Show this estate", @estate %> |
+  <%= link_to "Back to estates", estates_path %>
+</div>
