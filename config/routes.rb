@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount MissionControl::Jobs::Engine, at: "/jobs"
+
   resources :room_statuses
   resources :reservations
   resource :dashboard, only: [ :show ]

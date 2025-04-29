@@ -1,7 +1,7 @@
 class Reservation < ApplicationRecord
   belongs_to :room
   belongs_to :user
-  belongs_to :room_status
+  has_one :room_status
 
   validate :check_availability
 
