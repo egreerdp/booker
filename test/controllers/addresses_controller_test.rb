@@ -5,12 +5,12 @@ class AddressesControllerTest < ActionDispatch::IntegrationTest
     @address = addresses(:one)
   end
 
-  test "should get index" do
+  test "should profiles index" do
     get addresses_url
     assert_response :success
   end
 
-  test "should get new" do
+  test "should profiles new" do
     get new_address_url
     assert_response :success
   end
@@ -28,7 +28,7 @@ class AddressesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get edit" do
+  test "should profiles edit" do
     get edit_address_url(@address)
     assert_response :success
   end

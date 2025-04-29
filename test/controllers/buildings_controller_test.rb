@@ -5,12 +5,12 @@ class BuildingsControllerTest < ActionDispatch::IntegrationTest
     @building = buildings(:one)
   end
 
-  test "should get index" do
+  test "should profiles index" do
     get buildings_url
     assert_response :success
   end
 
-  test "should get new" do
+  test "should profiles new" do
     get new_building_url
     assert_response :success
   end
@@ -28,7 +28,7 @@ class BuildingsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get edit" do
+  test "should profiles edit" do
     get edit_building_url(@building)
     assert_response :success
   end

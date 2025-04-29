@@ -5,12 +5,12 @@ class RoomStatusesControllerTest < ActionDispatch::IntegrationTest
     @room_status = room_statuses(:one)
   end
 
-  test "should get index" do
+  test "should profiles index" do
     get room_statuses_url
     assert_response :success
   end
 
-  test "should get new" do
+  test "should profiles new" do
     get new_room_status_url
     assert_response :success
   end
@@ -28,7 +28,7 @@ class RoomStatusesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get edit" do
+  test "should profiles edit" do
     get edit_room_status_url(@room_status)
     assert_response :success
   end

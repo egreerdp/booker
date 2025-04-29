@@ -5,12 +5,12 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
     @event = events(:one)
   end
 
-  test "should get index" do
+  test "should profiles index" do
     get events_url
     assert_response :success
   end
 
-  test "should get new" do
+  test "should profiles new" do
     get new_event_url
     assert_response :success
   end
@@ -28,7 +28,7 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get edit" do
+  test "should profiles edit" do
     get edit_event_url(@event)
     assert_response :success
   end

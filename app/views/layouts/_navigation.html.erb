@@ -8,6 +8,9 @@
         <li>
           <%= button_to "Logout", session_path, method: :delete, class: "text-gray-800 hover:text-red-500" %>
         </li>
+        <li>
+          <%= link_to "Profile", profile_path, class: "text-gray-800 hover:text-red-500" %>
+        </li>
       <% else %>
         <li>
           <%= link_to "Login", new_session_path, class: "text-gray-800 hover:text-green-500" %>

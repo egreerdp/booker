@@ -5,12 +5,12 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
     @reservation = reservations(:one)
   end
 
-  test "should get index" do
+  test "should profiles index" do
     get reservations_url
     assert_response :success
   end
 
-  test "should get new" do
+  test "should profiles new" do
     get new_reservation_url
     assert_response :success
   end
@@ -28,7 +28,7 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get edit" do
+  test "should profiles edit" do
     get edit_reservation_url(@reservation)
     assert_response :success
   end

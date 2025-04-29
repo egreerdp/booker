@@ -5,12 +5,12 @@ class EstatesControllerTest < ActionDispatch::IntegrationTest
     @estate = estates(:one)
   end
 
-  test "should get index" do
+  test "should profiles index" do
     get estates_url
     assert_response :success
   end
 
-  test "should get new" do
+  test "should profiles new" do
     get new_estate_url
     assert_response :success
   end
@@ -28,7 +28,7 @@ class EstatesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get edit" do
+  test "should profiles edit" do
     get edit_estate_url(@estate)
     assert_response :success
   end
