@@ -11,12 +11,12 @@
 
   <p>
     <strong>Start time:</strong>
-    <%= reservation.start_time %>
+    <%= time_tag reservation.start_time, "data-local": "time", "data-format": "%B %e, %Y %l:%M%P" %>
   </p>
 
   <p>
     <strong>End time:</strong>
-    <%= reservation.end_time %>
+    <%= time_tag reservation.end_time, "data-local": "time", "data-format": "%B %e, %Y %l:%M%P" %>
   </p>
 
   <p>
