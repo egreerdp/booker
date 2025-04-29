@@ -1,5 +1,5 @@
 class DashboardController < ApplicationController
-  def show
+  def index
     @buildings = Building.all
     @building_count = Building.count
     @reservations = Reservation.all
