@@ -1,0 +1,18 @@
+<nav class="bg-gray-100 py-4">
+  <div class="container mx-auto px-4">
+    <ul class="flex space-x-4">
+      <li>
+        <%= link_to "Home", root_path, class: "text-gray-800 hover:text-blue-500" %>
+      </li>
+      <% if authenticated? %>
+        <li>
+          <%= button_to "Logout", session_path, method: :delete, class: "text-gray-800 hover:text-red-500" %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to "Login", new_session_path, class: "text-gray-800 hover:text-green-500" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

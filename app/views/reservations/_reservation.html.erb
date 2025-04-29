@@ -1,12 +1,17 @@
 <div id="<%= dom_id reservation %>">
   <p>
-    <strong>Room:</strong>
-    <%= reservation.room_id %>
+    <strong>Room number:</strong>
+    <%= reservation.room.number %>
+  </p>
+
+  <p>
+    <strong>Room name:</strong>
+    <%= reservation.room.name %>
   </p>
 
   <p>
     <strong>User:</strong>
-    <%= reservation.user_id %>
+    <%= reservation.user.email_address %>
   </p>
 
   <p>

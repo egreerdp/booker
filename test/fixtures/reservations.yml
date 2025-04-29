@@ -7,7 +7,7 @@ one:
   end_time: 2025-04-28 23:31:50
   purpose: Study
   notes: History Test
-  status: MyString
+  status: active
 
 two:
   room: two
@@ -16,4 +16,4 @@ two:
   end_time: 2025-04-28 23:31:50
   purpose: Hang out
   notes: time with the boys
-  status: MyString
+  status: pending

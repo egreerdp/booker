@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_28_230018) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_29_210536) do
+  create_table "addresses", force: :cascade do |t|
+    t.string "number"
+    t.string "street"
+    t.string "post_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "buildings", force: :cascade do |t|
     t.string "name"
     t.integer "number"
@@ -24,6 +32,16 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_28_230018) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.integer "address_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["address_id"], name: "index_events_on_address_id"
   end
 
   create_table "reservations", force: :cascade do |t|
@@ -71,6 +89,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_28_230018) do
     t.index ["email_address"], name: "index_users_on_email_address", unique: true
   end
 
+  add_foreign_key "events", "addresses"
   add_foreign_key "reservations", "rooms"
   add_foreign_key "reservations", "users"
   add_foreign_key "sessions", "users"
