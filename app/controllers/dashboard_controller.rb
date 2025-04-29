@@ -1,7 +1,6 @@
 class DashboardController < ApplicationController
   def index
-    @buildings = Building.all
-    @building_count = Building.count
-    @reservations = Reservation.all
+    @user = Current.user
+    @reservations = Reservation.where(user_id: @user.id)
   end
 end
