@@ -4,13 +4,6 @@ class ReservationsController < ApplicationController
   # GET /reservations or /reservations.json
   def index
     @reservations = Reservation.all
-    expired_status = RoomStatus.find_by(name: "expired")
-    @reservations.each do |reservation|
-      if reservation.has_passed && reservation.room_status != expired_status
-        reservation.room_status = expired_status
-        reservation.save
-      end
-    end
   end
 
   # GET /reservations/1 or /reservations/1.json
@@ -20,6 +13,13 @@ class ReservationsController < ApplicationController
   # GET /reservations/new
   def new
     @reservation = Reservation.new
+
+    expired_status = RoomStatus.find_by(name: "expired")
+
+    if @reservation.has_passed && @reservation.room_status != expired_status
+      @reservation.room_status = expired_status
+      @reservation.save
+    end
   end
 
   # GET /reservations/1/edit
