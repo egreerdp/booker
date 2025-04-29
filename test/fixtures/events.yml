@@ -1,2 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
+one:
+  name: "Event 1"
+  start_time: 2024-08-01 10:00:00
+  end_time: 2024-08-01 12:00:00
+  address_id: 1 # Reference the 'one' address in addresses.yml
+  created_at: <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %>
+  updated_at: <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %>
+
+two:
+  name: "Event 2"
+  start_time: 2024-08-02 14:00:00
+  end_time: 2024-08-02 16:00:00
+  address_id: 2 # Reference the 'two' address in addresses.yml
+  created_at: <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %>
+  updated_at: <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %>

@@ -1,11 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  number: MyString
-  street: MyString
-  post_code: MyString
+  id: 1
+  number: "123"
+  street: "Main St"
+  post_code: "12345"
+  created_at: <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %>
+  updated_at: <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %>
 
 two:
-  number: MyString
-  street: MyString
-  post_code: MyString
+  id: 2
+  number: "456"
+  street: "Oak Ave"
+  post_code: "67890"
+  created_at: <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %>
+  updated_at: <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %>

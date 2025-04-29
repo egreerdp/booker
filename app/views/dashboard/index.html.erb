@@ -11,4 +11,19 @@
   <% if @reservations.empty? %>
     <p class="text-gray-500">No bookings yet.</p>
   <% end %>
+
+</section>
+
+<section class="bg-gray-100 rounded-md shadow-md p-6 mb-8">
+  <h2 class="text-xl font-semibold text-gray-800 mb-4 border-b border-gray-300 pb-2">Events</h2>
+  <% if @events.present? %>
+    <% @events.each do |event| %>
+      <%= render event %>
+      <% unless event == @events.last %>
+        <hr class="border-gray-200 my-4">
+      <% end %>
+    <% end %>
+  <% else %>
+    <p class="text-gray-500">No events yet.</p>
+  <% end %>
 </section>
