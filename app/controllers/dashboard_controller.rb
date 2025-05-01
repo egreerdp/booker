@@ -1,7 +1,8 @@
 class DashboardController < ApplicationController
+  before_action :current_user
+  before_action :current_reservations
+  before_action :current_events
+
   def index
-    @user = Current.user
-    @reservations = Reservation.where(user_id: @user.id)
-    @events = Event.all
   end
 end

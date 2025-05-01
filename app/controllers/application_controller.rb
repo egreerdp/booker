@@ -11,10 +11,18 @@ class ApplicationController < ActionController::Base
 
   def set_current_user
     return unless session[:user_id]
-    @current_user ||= User.find_by(id: session[:user_id])
+    @user ||= User.find_by(id: session[:user_id])
   end
 
   def current_user
-    @current_user = Current.user
+    @user = Current.user
+  end
+
+  def current_reservations
+    @reservations = Reservation.where(user_id: current_user.id).order(user_id: :desc)
+  end
+
+  def current_events
+    @events = Event.order(id: :desc)
   end
 end
