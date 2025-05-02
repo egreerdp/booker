@@ -56,7 +56,6 @@ Rails.application.configure do
   config.solid_queue.connects_to = { database: { writing: :queue } }
 
   MissionControl::Jobs.base_controller_class = "AdminController"
-  config.mission_control.jobs.http_basic_auth_enabled = false
 
   # Highlight code that enqueued background job in logs.
   config.active_job.verbose_enqueue_logs = true
