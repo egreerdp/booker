@@ -24,6 +24,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "dashboard#index"
 
-  resources :user
-  get "/profile", to: "user#show"
+  resources :users
+  get "/profile", to: "users#show"
 end

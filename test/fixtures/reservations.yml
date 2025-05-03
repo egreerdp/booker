@@ -16,13 +16,13 @@ two:
   end_time: 2025-04-28 23:31:50
   purpose: Hang out
   notes: time with the boys
-  status: pending
+  status: active
 
 three:
   room: two
   user: two
-  start_time: 2025-04-28 23:31:50
-  end_time: 2025-04-28 23:31:50
+  start_time: 2025-04-28 23:59:50
+  end_time: 2025-04-28 23:59:50
   purpose: Sleep
   notes: recover from the hang out
   status: pending

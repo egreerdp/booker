@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_reservations
-    @reservations = Reservation.where(user_id: current_user.id).order(user_id: :desc)
+    @reservations = Reservation.where(user_id: current_user.id).order(start_time: :asc)
   end
 
   def current_events

@@ -1,42 +1,47 @@
-<div id="<%= dom_id reservation %>">
-  <p>
-    <strong>Room number:</strong>
-    <%= reservation.room.number %>
-  </p>
-
-  <p>
-    <strong>Room name:</strong>
-    <%= reservation.room.name %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= reservation.user.email_address %>
-  </p>
-
-  <p>
-    <strong>Start time:</strong>
-    <%= time_tag reservation.start_time, "data-local": "time", "data-format": "%B %e, %Y %l:%M%P" %>
-  </p>
-
-  <p>
-    <strong>End time:</strong>
-    <%= time_tag reservation.end_time, "data-local": "time", "data-format": "%B %e, %Y %l:%M%P" %>
-  </p>
-
-  <p>
-    <strong>Purpose:</strong>
-    <%= reservation.purpose %>
-  </p>
-
-  <p>
-    <strong>Notes:</strong>
-    <%= reservation.notes %>
-  </p>
-
-  <p>
-    <strong>Status:</strong>
-    <%= reservation.status %>
-  </p>
-
+<div id="<%= dom_id reservation %>" class="row row-cols-1 row-cols-sm-2 g-2">
+  <div class="col">
+    <p class="mb-1">
+      <strong class="text-muted">Room:</strong>
+      <%= reservation.room.number %> (<%= reservation.room.name %>)
+    </p>
+  </div>
+  <div class="col">
+    <p class="mb-1">
+      <strong class="text-muted">User:</strong>
+      <%= reservation.user.email_address %>
+    </p>
+  </div>
+  <div class="col">
+    <p class="mb-1">
+      <strong class="text-muted">Start:</strong>
+      <%= time_tag reservation.start_time, "data-local": "time", "data-format": "%b %e, %Y %l:%M%P" %>
+    </p>
+  </div>
+  <div class="col">
+    <p class="mb-1">
+      <strong class="text-muted">End:</strong>
+      <%= time_tag reservation.end_time, "data-local": "time", "data-format": "%b %e, %Y %l:%M%P" %>
+    </p>
+  </div>
+  <div class="col-12">
+    <p class="mb-1">
+      <strong class="text-muted">Purpose:</strong>
+      <%= reservation.purpose %>
+    </p>
+  </div>
+  <div class="col-12">
+    <p class="mb-1">
+      <strong class="text-muted">Notes:</strong>
+      <%= reservation.notes.truncate(50) if reservation.notes.present? %>
+      <% if reservation.notes.present? && reservation.notes.length > 50 %>
+        <span class="text-muted small">(more...)</span>
+      <% end %>
+    </p>
+  </div>
+  <div class="col-12">
+    <p class="mb-0">
+      <strong class="text-muted">Status:</strong>
+      <span class="badge bg-info"><%= reservation.status %></span>
+    </p>
+  </div>
 </div>

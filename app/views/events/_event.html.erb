@@ -1,22 +1,26 @@
-<div id="<%= dom_id event %>">
-  <p>
-    <strong>Name:</strong>
-    <%= event.name %>
-  </p>
-
-  <p>
-    <strong>Start time:</strong>
-    <%= event.start_time %>
-  </p>
-
-  <p>
-    <strong>End time:</strong>
-    <%= event.end_time %>
-  </p>
-
-  <p>
-    <strong>Address:</strong>
-    <%= event.address_id %>
-  </p>
-
+<div id="<%= dom_id event %>" class="row row-cols-1 g-2">
+  <div class="col-12">
+    <p class="mb-1">
+      <strong class="text-muted">Name:</strong>
+      <%= event.name %>
+    </p>
+  </div>
+  <div class="col-6">
+    <p class="mb-1">
+      <strong class="text-muted">Start:</strong>
+      <%= time_tag event.start_time, "data-local": "time", "data-format": "%b %e, %Y %l:%M%P" %>
+    </p>
+  </div>
+  <div class="col-6">
+    <p class="mb-1">
+      <strong class="text-muted">End:</strong>
+      <%= time_tag event.end_time, "data-local": "time", "data-format": "%b %e, %Y %l:%M%P" %>
+    </p>
+  </div>
+  <div class="col-12">
+    <p class="mb-0">
+      <strong class="text-muted">Address ID:</strong>
+      <span class="badge bg-secondary"><%= event.address_id %></span>
+    </p>
+  </div>
 </div>
