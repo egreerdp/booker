@@ -18,9 +18,14 @@
               <h2 class="h6 text-uppercase fw-bold text-primary mb-0">
                 <%= link_to "Reservations", reservations_path, class: "nav-link" %>
               </h2>
-              <% if @reservations.present? %>
-                <span class="badge bg-primary rounded-pill"><%= @reservations.count %></span>
-              <% end %>
+              <div class="d-flex align-items-center">
+                <% if @reservations.present? %>
+                  <span class="badge bg-primary rounded-pill me-2"><%= @reservations.count %></span>
+                <% end %>
+                <%= link_to new_reservation_path, class: "text-primary" do %>
+                  <i class="bi bi-plus-circle-fill" style="font-size: 1.2em;"></i>
+                <% end %>
+              </div>
             </div>
           </div>
           <div class="card-body p-2">
@@ -44,9 +49,14 @@
               <h2 class="h6 text-uppercase fw-bold text-success mb-0">
                 <%= link_to "Events", events_path, class: "nav-link" %>
               </h2>
-              <% if @events.present? %>
-                <span class="badge bg-success rounded-pill"><%= @events.count %></span>
-              <% end %>
+              <div class="d-flex align-items-center">
+                <% if @events.present? %>
+                  <span class="badge bg-success rounded-pill me-2"><%= @events.count %></span>
+                <% end %>
+                <%= link_to new_event_path, class: "text-success" do %>
+                  <i class="bi bi-plus-circle-fill" style="font-size: 1.2em;"></i>
+                <% end %>
+              </div>
             </div>
           </div>
           <div class="card-body p-2">

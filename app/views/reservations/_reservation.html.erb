@@ -8,7 +8,7 @@
   <div class="col">
     <p class="mb-1">
       <strong class="text-muted">User:</strong>
-      <%= reservation.user.email_address %>
+      <%= reservation.user.display_name.present? ? reservation.user.display_name : reservation.user.email_address %>
     </p>
   </div>
   <div class="col">
@@ -41,7 +41,19 @@
   <div class="col-12">
     <p class="mb-0">
       <strong class="text-muted">Status:</strong>
-      <span class="badge bg-info"><%= reservation.status %></span>
+      <% status_class = case reservation.status.downcase %>
+      <% when 'pending' %>
+        <% 'bg-warning' %>
+      <% when 'confirmed' %>
+        <% 'bg-success' %>
+      <% when 'cancelled' %>
+        <% 'bg-danger' %>
+      <% when 'completed' %>
+        <% 'bg-secondary' %>
+      <% else %>
+        <% 'bg-info' %>
+      <% end %>
+      <span class="badge <%= status_class %>"><%= reservation.status %></span>
     </p>
   </div>
 </div>
