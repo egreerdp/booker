@@ -1,11 +1,49 @@
 <% content_for :title, "New reservation" %>
 
-<h1>New reservation</h1>
+<div class="container mt-4">
+  <h1>New reservation</h1>
 
-<%= render "form", reservation: @reservation %>
+  <%= form_with(model: @reservation, class: "row g-3") do |form| %>
+    <% if @reservation.errors.any? %>
+      <div class="alert alert-danger">
+        <h2><%= pluralize(@reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
 
-<br>
+        <ul>
+          <% @reservation.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-<div>
-  <%= link_to "Back to reservations", reservations_path %>
+    <div class="col-md-6">
+      <%= form.label :room_id, "Room", class: "form-label" %>
+      <%= form.select :room_id, @available_rooms.collect { |r| [ "#{r.number} (#{r.name})", r.id ] }, { prompt: "Select a room" }, class: "form-select" %>
+    </div>
+
+    <div class="col-md-6">
+      <%= form.label :start_time, class: "form-label" %>
+      <%= form.datetime_field :start_time, class: "form-control" %>
+    </div>
+
+    <div class="col-md-6">
+      <%= form.label :end_time, class: "form-label" %>
+      <%= form.datetime_field :end_time, class: "form-control" %>
+    </div>
+
+    <div class="col-12">
+      <%= form.label :purpose, class: "form-label" %>
+      <%= form.text_field :purpose, class: "form-control" %>
+    </div>
+
+    <div class="col-12">
+      <%= form.label :notes, class: "form-label" %>
+      <%= form.text_area :notes, class: "form-control" %>
+    </div>
+
+    <div class="col-12 d-flex justify-content-end mt-3">
+      <%= link_to "Back to reservations", reservations_path, class: "btn btn-secondary me-2" %>
+      <%= form.submit "Create Reservation", class: "btn btn-primary" %>
+    </div>
+  <% end %>
 </div>

@@ -32,7 +32,12 @@
             <% if @reservations.present? %>
               <ul class="list-group list-group-flush">
                 <% @reservations.each do |reservation| %>
-                  <li class="list-group-item py-1"><%= render reservation %></li>
+                  <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
+                    <%= render reservation %>
+                    <%= link_to reservation_path(reservation), class: "btn btn-outline-primary btn-sm" do %>
+                      <i class="bi bi-eye-fill"></i> View
+                    <% end %>
+                  </li>
                 <% end %>
               </ul>
             <% else %>
@@ -63,7 +68,12 @@
             <% if @events.present? %>
               <ul class="list-group list-group-flush">
                 <% @events.each do |event| %>
-                  <li class="list-group-item py-1"><%= render event %></li>
+                  <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
+                    <%= render event %>
+                    <%= link_to event_path(event), class: "btn btn-outline-success btn-sm" do %>
+                      <i class="bi bi-eye-fill"></i> View
+                    <% end %>
+                  </li>
                 <% end %>
               </ul>
             <% else %>
