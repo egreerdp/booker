@@ -10,6 +10,8 @@ gem "sqlite3", ">= 2.1"
 gem "puma", ">= 5.0"
 
 gem "mission_control-jobs"
+gem "dartsass-rails"
+gem "bootstrap", "~> 5.3.3"
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
